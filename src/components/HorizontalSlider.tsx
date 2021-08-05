@@ -30,8 +30,9 @@ const styles = StyleSheet.create({
     height: 260,
   },
   title: {
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: 'bold',
     marginLeft: 10,
+    marginBottom: 10,
   },
 });
