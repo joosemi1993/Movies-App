@@ -10,7 +10,7 @@ import {useMovies} from '../hooks/useMovies';
 const {width: windowWidth} = Dimensions.get('window');
 
 export const Home = () => {
-  const {actualMovies, isLoading} = useMovies();
+  const {nowPlaying, popular, topRated, upcoming, isLoading} = useMovies();
   const {top} = useSafeAreaInsets();
 
   if (isLoading) {
@@ -22,14 +22,16 @@ export const Home = () => {
       <View style={{marginTop: top + 20}}>
         <View style={styles.carouselContainer}>
           <Carousel
-            data={actualMovies}
+            data={nowPlaying}
             renderItem={({item}: any) => <MovieCard movie={item} />}
             sliderWidth={windowWidth}
             itemWidth={250}
             inactiveSlideOpacity={0.9}
           />
         </View>
-        <HorizontalSlider title="In cinema" movies={actualMovies} />
+        <HorizontalSlider title="Popular" movies={popular} />
+        <HorizontalSlider title="Top Rated" movies={topRated} />
+        <HorizontalSlider title="Upcoming" movies={upcoming} />
       </View>
     </ScrollView>
   );
