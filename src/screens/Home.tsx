@@ -1,7 +1,8 @@
 import React from 'react';
-import {Dimensions, StyleSheet, View} from 'react-native';
+import {Dimensions, StyleSheet, View, ScrollView} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import Carousel from 'react-native-snap-carousel';
+import {HorizontalSlider} from '../components/HorizontalSlider';
 import {Loading} from '../components/Loading';
 import {MovieCard} from '../components/MovieCard';
 import {useMovies} from '../hooks/useMovies';
@@ -17,16 +18,20 @@ export const Home = () => {
   }
 
   return (
-    <View style={{marginTop: top + 20}}>
-      <View style={styles.carouselContainer}>
-        <Carousel
-          data={actualMovies}
-          renderItem={({item}: any) => <MovieCard movie={item} />}
-          sliderWidth={windowWidth}
-          itemWidth={250}
-        />
+    <ScrollView>
+      <View style={{marginTop: top + 20}}>
+        <View style={styles.carouselContainer}>
+          <Carousel
+            data={actualMovies}
+            renderItem={({item}: any) => <MovieCard movie={item} />}
+            sliderWidth={windowWidth}
+            itemWidth={250}
+            inactiveSlideOpacity={0.9}
+          />
+        </View>
+        <HorizontalSlider title="In cinema" movies={actualMovies} />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
