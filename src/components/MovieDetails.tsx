@@ -23,11 +23,11 @@ export const MovieDetails = ({movieFull, cast}: Props) => {
           </Text>
         </View>
         <Text style={{fontSize: 23, marginTop: 10, fontWeight: 'bold'}}>
-          Historia
+          Resume
         </Text>
         <Text style={{fontSize: 18}}>{movieFull.overview}</Text>
         <Text style={{fontSize: 23, marginTop: 10, fontWeight: 'bold'}}>
-          Presupuesto
+          Costs
         </Text>
         <Text style={{fontSize: 18}}>
           {currencyFormatter.format(movieFull.budget, {code: 'USD'})}
@@ -38,7 +38,7 @@ export const MovieDetails = ({movieFull, cast}: Props) => {
             marginTop: 10,
             fontWeight: 'bold',
           }}>
-            Actores
+            Actors
           </Text>
           <FlatList
             data={cast}

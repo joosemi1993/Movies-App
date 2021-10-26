@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import {RootStackParams} from '../navigation/Navigation';
 import {useMovieDetails} from '../hooks/useMovieDetails';
 import {MovieDetails} from '../components/MovieDetails';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const screenHeight = Dimensions.get('screen').height;
 
